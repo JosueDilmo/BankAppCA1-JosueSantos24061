@@ -1,0 +1,187 @@
+public void Login()
+        {
+            Driver.OutputSeparator();
+            Console.WriteLine("============================| Welcome to Bank 24061 |===========================");
+            Driver.OutputSeparator();
+            
+            bool loopContinue = true;
+            while (loopContinue) // while true keep looping
+            {
+                Console.WriteLine("Type 1. Bank Employee");
+                Console.WriteLine("Type 2. Bank Customer");
+                Console.Write("Option: ");
+                // TryParse to avoid an Exception if the user types a letter for example.
+                if (Int32.TryParse(Console.ReadLine(), out int userOption))
+                Driver.OutputSeparator(); //To separete the different fields and make it nicer to read.
+                {
+                    switch (userOption)
+                    {
+                        case 1:
+                        
+                        loopContinue = false;
+                        break;
+
+                        case 2:
+                           
+
+                        loopContinue = false;
+                        break;
+
+                        default:
+                        loopContinue = true;
+                        break;
+                    }
+                }
+
+            if (loopContinue)
+            Console.WriteLine("Please enter a valid choice.");
+            Driver.OutputSeparator(); // Simulate new screen
+            }
+
+
+        }
+
+
+
+        public static void OutputSeparator()
+        {
+            Console.WriteLine("=".PadRight(80, '='));
+        }
+
+        //public static void OutputMiniSeparator()
+        //{
+        //    Console.WriteLine("=".PadRight(40, '='));
+        //}
+
+
+
+
+        public Driver(string firstName, string lastName, string email)
+        {
+
+            string customersFile = "customers.txt";
+            
+            string[] bankCustomers = { "["+firstName+" "+lastName+" "+"at "+ email+"]"};
+
+            BankCustomer.CreateAccount(customersFile, bankCustomers);
+            
+        }
+
+        public void DriverCreateSaving(string letterFirstName, string letterLastName, int lengthFullName, int positionFirst, int positionLast)
+        {
+            string savingsAccFile = ($"{letterFirstName}{letterLastName}-{lengthFullName}-{positionFirst}-{positionLast}-savings.txt");
+            string[] customerSavingsAcc = Array.Empty<string>();
+            BankCustomer.CreateSavingsFile(savingsAccFile, customerSavingsAcc);
+        }
+
+
+          public void comparing(string letterFirstName)
+        {
+            string s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string s2 = letterFirstName;
+            
+            bool b = s1.Contains(s2);
+            Console.WriteLine($"{s2} is in the string {s1}: {b}");
+            if (b)
+            {
+                int index = s1.IndexOf(s2);
+                if (index >= 0)
+                    Console.WriteLine($"'{s2} is at character position {index+1}");
+            }
+        }
+
+     public static int DriverFindLetter(string findLetterAt)
+        {
+            string s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string s2 = findLetterAt;
+            int letterAt = s1.IndexOf(s2)+1;
+            return letterAt;
+
+
+
+
+            public static void DriverDeposit()
+        {
+            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            bool optionLoop = true;
+            while (optionLoop)
+            {
+                Console.Write("Enter Account Code: ");
+                string accountCode = Console.ReadLine();
+                Console.WriteLine("1. Deposit in Current Account");
+                Console.WriteLine("2. Deposit in Savings Account");
+                Console.Write("Option: ");
+                if (Int32.TryParse(Console.ReadLine(), out int optionUser))
+                {
+                    switch (optionUser)
+                    {
+                        case 1:
+                            optionLoop = false;
+                            string currentToWrite = $"{path}/{accountCode}-current.txt";
+                                try
+                                {
+                                    using (StreamWriter sw = new StreamWriter(currentToWrite, true))
+                                {
+                                        Console.Write("Please, Enter Amount: ");
+                                        decimal.TryParse(Console.ReadLine(), out decimal depositAmount);
+                                        string formartedDeposit = DateTime.Now.ToString("yyyy-MM-dd")+'\t'+"Deposit"+'\t'+depositAmount+'\t';
+                                    sw.WriteLine(formartedDeposit);
+                                            while (depositAmount < 0)
+                                            {
+                                            Console.Write("Please, Enter a Valid Amount: ");
+                                            }
+
+                                    }
+
+                                }
+                                catch (Exception e)
+                                 {
+                                    Console.WriteLine($"The {currentToWrite} file could not be written");
+                                    Console.WriteLine(e.Message);
+
+                                }
+                            break;
+
+                        case 2:
+                            optionLoop = false;
+                            string savingsToWrite = $"{path}/{accountCode}-savings.txt";
+                            try
+                            {
+                                using (StreamWriter sw = new StreamWriter(savingsToWrite, true))
+                                {
+                                    Console.Write("Please, Enter Amount: ");
+                                    decimal.TryParse(Console.ReadLine(), out decimal depositAmount);
+                                    string formartedDeposit = DateTime.Now.ToString("yyyy-MM-dd") + '\t' + "Deposit" + '\t' + depositAmount + '\t';
+                                    sw.WriteLine(formartedDeposit);
+                                    while (depositAmount < 0)
+                                    {
+                                        Console.Write("Please, Enter a Valid Amount: ");
+                                    }
+
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine($"The {savingsToWrite} file could not be written");
+                                Console.WriteLine(e.Message);
+
+                            }
+                            break;
+                        
+                        default:
+                            optionLoop = true;
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please, choose a valid option.");
+                    Driver.OutputSeparator(); // Simulate new screen
+                }
+            }
+            
+            
+
+            
+        }
