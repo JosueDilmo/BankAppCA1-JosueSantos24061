@@ -15,7 +15,7 @@ namespace BankAppCA1_JosueSantos24061.Models
         public static int DriverFindLetter(string findLetterAt) //Method to find the first letter of customer name
         {
             string s1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string s2 = findLetterAt;
+            string s2 = findLetterAt.ToUpper();
             int letterAt = s1.IndexOf(s2)+1;
             return letterAt;
         }

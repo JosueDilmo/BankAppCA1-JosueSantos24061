@@ -11,24 +11,13 @@ namespace BankAppCA1_JosueSantos24061
         static void Main(string[] args)
         {
             //Creating customers.txt file
-            BankAccount.FirstTimeCustomerFile();
+            BankSystem.FirstTimeCustomerFile();
 
             
             //Opening bank system menu
-            bool systemOn = true;
-            while (systemOn) 
-            { 
-            BankAccount.BankSystemLogin();
-
-               Console.WriteLine("Do you want to close the program? ");
-               string answer = Console.ReadLine();
-               if (answer == "yes")
-               {
-                   systemOn = false;
-               }
-            }
+            BankSystem.BankSystemLogin();
             
-
+           
         }
     }
 }

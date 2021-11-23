@@ -1,5 +1,0 @@
-﻿Driver driver = new("Josue","Santos","josuedilmo@gmail.com");
-            Console.WriteLine(driver);
-
-            Driver driver2 = new("Josue2", "Santos2", "josuedilmo@gmail.com2");
-            Console.WriteLine(driver2);

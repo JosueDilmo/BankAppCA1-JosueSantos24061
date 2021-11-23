@@ -1,33 +1,59 @@
-First challenge was to make a loop working if the user enters a letter instead of a number 
+1 challenge was to make a loop working if the user enters a letter instead of a number 
 	to be able to make it I used the TryParse, while loop, switch case
 
-Second challenge find a way to compare the customer details with the accounts created, if right let them in else repeat.
-	***?
+2 challenge find a way to compare the customer details with the accounts created, if right let them in if not repeat details.
+	solve that creating method ValidateCustomer which read customer.txt and loop inside it comparing if the variables exist in there.
+	accountcode, pin, name and last name (almost same structure when creating a new customer.)
 
-Third challenge was creating the customer.txt file, needed a way to add every new account in the file using the same variables 
+3 challenge was creating the customer.txt file, needed a way to add every new account in the file using the same variables 
 	solved that passing variables when creating the object.
 
-Fourth challenge how to add every new customer account in a new line, keeping the old ones 
+4 challenge how to add every new customer account in a new line, keeping the old ones 
 	solved that putting TRUE after filetowrite.
 
-Fifth challenge how to retrieve each first letter of the customer name and calculate the full name lenght. 
+5 challenge how to retrieve each first letter of the customer name and calculate the full name lenght. 
 	Did that using string.length for the full name and for first letters of each name string.Substring.
 
-Sixth challenge how to get the position of the first letter of each name according to the table given.
+6 challenge how to get the position of the first letter of each name according to the table given.
 	string contains worked well created a method in Driver class to find the first letter of each name and get the position according to the table
 
-Seventh challenge formating the deposit/withdrawl transactions in the savings/current accounts files. AND input the date.
+7 challenge formating the deposit/withdrawl transactions in the savings/current accounts files. AND input the date.
 	solved that using DateTime.Now.ToString found that in Microsoft docs.
 
-Eighth challenge a way to check if the savings/current account exist if not make the user type account code again. (why? if the account code does not exist it is creating a new file, if misstype create new file)
-	****?
+8 challenge a way to check if the savings/current account exist if not make the user type account code again. 
+	when the program as customer if your acc does not exist customer cant get in
+	if exist custoemr get in and the account code pass to the customer menu and so on when opening other methods
+	when using as employee to make transactions for customers have to type it right or create new files with the acc code typed.
 
-Nineth challenge update the balance in the class CurrentAccBalance/SavingsAccBalance and write to the file the new balance.
-	solved that with get/set, creation of a list and a class for the transactions separate by current/savings account
+9 challenge update the balanceCurrentAcc/SavingsAcce and write to the file the new balance when making transactions.
+	solved that with GetCurrentBalance/SavingsBalance, last position of the array is the balance and returning it as decimal.
 
-Tenth challenge how to list customers and display balance of savings and current accounts of each one
-	***? ListCustomers readfile customers.txt ... but .... how to get their balances?? loop through all the transactions and sum it? Or read their files and 
-		in some way get the last transaction/balance?
+10 challenge how to list customers and display balance of savings and current accounts of each one
+	with the GetCurrentBalance/Savings the last position of the array is always the balance,
+	just put that in a variable and return it.
+	when there is a transaction i get that value, add the amount in the transaction and write the file again with the new line/updated balance.
 
-Eleventh challenge delete customers and update customer.txt file
-	****? no ideia
+11 challenge delete customers and update customer.txt file
+	the first part to check balances was ok nothing challenge
+	the second part when gets in the switch case 1
+		i was having erro because streamwriter/reader was being used by another process...
+		and the file was being used as well
+			was when i discover streamreader or streamwriter.Close();
+			file.delete and move which made my life easier.
+		works like read > keep it open and write to another file > close writer and close reader
+		after that delete files which has that acc code and delete the old customer.txt file
+		rename the new-customers.txt to customers.txt
+	customer deleted
+
+
+	I think this can solve number 2,8,10
+				List<string> list = array.ToList();
+
+			if(File.Exists(@"C:\test.txt"))
+			{
+			 File.Delete(@"C:\test.txt");
+			}
+
+
+Abstract classes  *******?
+Interface *******?
