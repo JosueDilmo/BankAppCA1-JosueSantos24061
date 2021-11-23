@@ -46,14 +46,10 @@
 	customer deleted
 
 
-	I think this can solve number 2,8,10
-				List<string> list = array.ToList();
-
-			if(File.Exists(@"C:\test.txt"))
-			{
-			 File.Delete(@"C:\test.txt");
-			}
+Abstract classes  *******?   Interface *******?
+	Not confident enough to use it and i think i need more understanding of what it is to be able to see it's use.
 
 
-Abstract classes  *******?
-Interface *******?
+Best regards,
+Josue Dilmo dos Santos
+Sno: 24061
