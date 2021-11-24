@@ -45,6 +45,9 @@
 		rename the new-customers.txt to customers.txt
 	customer deleted
 
+### Changed the variable path from absolute path to relative ./BankFiles
+To be able to to that had to change the location of the folder BankFiles to ./bin/Debug/net5.0/BankFiles
+
 
 Abstract classes  *******?   Interface *******?
 	Not confident enough to use it and i think i need more understanding of what it is to be able to see it's use.

@@ -75,7 +75,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void CreateCustomerFile(string customersFile, string[] bankCustomers) //adding customer to customers.txt
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
 
             string fileToWrite = $"{path}/{customersFile}";
 
@@ -112,8 +112,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void CreateSavingsFile(string savingsAccFile, string[] customerSavingsAcc) //creating savings.txt file
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
-
+            string path = "./BankFiles";
             string fileToWrite = $"{path}/{savingsAccFile}";
 
             try
@@ -148,7 +147,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void CreateCurrentFile(string currentAccFile, string[] customerCurrentAcc) //creating current.txt file
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
 
             string fileToWrite = $"{path}/{currentAccFile}";
 
@@ -173,7 +172,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void Deposit(string customerAccDetails) //deposit method
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             bool optionLoop = true;
             while (optionLoop)
             {
@@ -269,7 +268,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void Withdrawl(string customerAccDetails) //withdrawl method
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             bool optionLoop = true;
             while (optionLoop)
             {
@@ -364,7 +363,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void ListCustomers() // read customers.txt file and out put a list with all of them
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             string customersFile = "customers.txt";
             string customerToRead = $"{path}/{customersFile}";
             try
@@ -388,7 +387,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static decimal GetCurrentBalance(string customerAccDetails)
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             string currentAccount = $"{customerAccDetails}-current.txt";
             string loadCurrentAccount = $"{path}/{currentAccount}";
             string[] currentData = File.ReadAllText(loadCurrentAccount).Split("|");
@@ -400,7 +399,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static decimal GetSavingsBalance(string customerAccDetails)
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             string savingsAccount = $"{customerAccDetails}-savings.txt";
             string loadSavingsAccount = $"{path}/{savingsAccount}";
             string[] savingsData = File.ReadAllText(loadSavingsAccount).Split("|");
@@ -412,7 +411,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void ReadCurrentTransactions(string customerAccDetails)
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             string currentAccount = $"{customerAccDetails}-current.txt";
             string loadCurrentAccount = $"{path}/{currentAccount}";
             try
@@ -437,7 +436,7 @@ namespace BankAppCA1_JosueSantos24061.Models
 
         public static void ReadSavingsTransactions(string customerAccDetails)
         {
-            string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+            string path = "./BankFiles";
             string savingsAccount = $"{customerAccDetails}-savings.txt";
             string loadSavingsAccount = $"{path}/{savingsAccount}";
             try
@@ -480,7 +479,7 @@ namespace BankAppCA1_JosueSantos24061.Models
                 switch (confirmAciton)
                 {
                     case 1:
-                        string path = "c:/Users/DELL/Desktop/Josue/BSC2 - 0921 - Semester 1/Object-Oriented Programming/Assignment CA1 and CA2/BankAppCA1@JosueSantos24061/BankFiles";
+                        string path = "./BankFiles";
                         string customersFile = "customers.txt";                       
                         string customerToRead = $"{path}/{customersFile}";
                         string newCustomerFile = "new-customers.txt";
