@@ -11,6 +11,11 @@ namespace BankAppCA1_JosueSantos24061
     {
         static void Main(string[] args)
         {
+            // Create directory BankFiles if it doesn't exist
+            string pathBankFilesFolder = @"./BankFiles";
+            string bankFiles = Path.Combine(pathBankFilesFolder);
+            Directory.CreateDirectory(bankFiles);
+
             //Creating customers.txt file
             BankSystem.FirstTimeCustomerFile();
             

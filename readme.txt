@@ -45,8 +45,10 @@
 		rename the new-customers.txt to customers.txt
 	customer deleted
 
-### Changed the variable path from absolute path to relative ./BankFiles
-To be able to to that had to change the location of the folder BankFiles to ./bin/Debug/net5.0/BankFiles
+### 
+Changed the variable path from absolute path to relative ./BankFiles
+	To be able to to that had to insert in program.cs a few lines of code to create the directory if that does not exist.
+	I think is working fine. Downloaded the .zip folder from GitHub and it worked.
 
 
 Abstract classes  *******?   Interface *******?
