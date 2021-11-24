@@ -6,8 +6,4 @@
     <RootNamespace>BankAppCA1_JosueSantos24061</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="BankFiles\" />
-  </ItemGroup>
-
 </Project>
